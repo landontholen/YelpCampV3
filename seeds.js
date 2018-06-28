@@ -5,21 +5,21 @@ var Comment = require("./models/comment");
 var data = [
     {
         name: "Beach",
-        image: "https://pixabay.com/get/ea36b70928f21c22d2524518b7444795ea76e5d004b0144295f0c57ca7eebd_340.jpg", 
+        image: "http://www.miamiandbeaches.com/-/media/images/miamiandbeaches/things-to-do/beaches/green-lifeguard-stand-456x406.jpg",  
         description: "Beach picture"     
     },
     
     {
         name: "Mountain",
-        image: "https://pixabay.com/get/eb35b70b2df6033ed1584d05fb1d4e97e07ee3d21cac104496f0c17da2edb6b0_340.jpg", 
+        image: "https://www.filmhousecinema.com/sites/filmhousecinema.com/files/shows/2017/Mountain-3.jpg", 
         description: "Mountain picture"     
     },
-        
+      
     {
         name: "Plains",
-        image: "https://pixabay.com/get/e837b1072af4003ed1584d05fb1d4e97e07ee3d21cac104496f0c17da2edb6b0_340.jpg", 
+        image: "https://www.climatehubs.oce.usda.gov/sites/default/files/styles/featured_image/public/NP-about.jpeg?itok=fT4055LK", 
         description: "Plains picture"     
-    },
+    }
 ]; 
 
 
@@ -40,13 +40,13 @@ function seedDB(){
                     console.log("New campground added successfully"); 
                     Comment.create(
                         {
-                            text: "This place is great, but I wish there was internet" 
+                            text: "This place is great, but I wish there was internet", 
                             author: "Homer"
                         }, function(err, comment){
                             if(err){
                                 console.log(err); 
                             } else {
-                                campground.comment.push(comment); 
+                                campground.comments.push(comment); 
                                 campground.save(); 
                                 console.log("Created new comment"); 
                             }
