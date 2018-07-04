@@ -10,7 +10,7 @@ mongoose.connect("mongodb://localhost/yelp_camp");
 
 app.use(bodyParser.urlencoded({extended: true})); 
 
-app.use(express.static("public")); 
+app.use(express.static(__dirname + "/public")); 
 
 app.set("view engine", "ejs"); 
 
@@ -94,7 +94,6 @@ app.post("/campgrounds/:id/comments", function(req, res){
                 if(err){
                     console.log(err); 
                 } else {
-                    console.log(req.body.comment); 
                     campground.comments.push(comment);
                     campground.save(); 
                     res.redirect("/campgrounds/" + campground._id); 
